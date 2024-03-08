@@ -1,19 +1,21 @@
-import { products } from "./utils/products";
-import ProductCard from "./components/product_card";
+import { AddStudent } from "./components/AddStudent";
 import { useState } from "react";
+import { students as students_array } from "./utils/students";
+import StudentView from "./components/StudentView";
+import Layout from "./components/Layout";
 
 export default function App() {
-  let [count, setCount] = useState(0);
+  const [students, setStudents] = useState([]);
+  console.log(students)
 
   return (
-    <div>
-      <h1 className="text-5xl text-center mb-2">Count: {count}</h1>
-      {/* tailwind grid system, 3 products in a row */}
-      <div className="grid grid-cols-3 gap-4">
-        {products.map((product, index) => {
-          return <ProductCard key={index} data={product} state={{ count, setCount }} />;
-        })}
+    <Layout>
+      <AddStudent state={{ students, setStudents }} />
+      <div className="flex flex-wrap justify-center">
+        {
+          students.length > 0 ? <StudentView state={{ students, setStudents }} /> : <h1>No Data Found</h1>
+        }
       </div>
-    </div>
+    </Layout>
   )
 }
