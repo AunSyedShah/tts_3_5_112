@@ -1,24 +1,14 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Ignore all files and directories
+/*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Except assets directory
+!/assets/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Except index.html
+!/index.html
+
+# Except vite.svg
+!/vite.svg
+
+# Allow all files within assets directory (assuming it's a directory)
+/assets/**
