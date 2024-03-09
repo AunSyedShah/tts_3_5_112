@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Layout(props) {
     return (
@@ -9,9 +10,9 @@ export default function Layout(props) {
                     {/* Navbar content goes here */}
                     <nav className="flex justify-between items-center">
                         <div>
-                            <a href="#" className="text-xl font-bold">
+                            <Link to="/" className="text-xl font-bold">
                                 Your Logo
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             {/* Navbar links go here */}

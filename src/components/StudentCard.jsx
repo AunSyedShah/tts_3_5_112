@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+import { useStudents } from "../context/StudentsContext";
+
 export function StudentCard(props) {
     const { student } = props;
-    const { state: { students, setStudents } } = props;
-
+    const { students, setStudents } = useStudents()
     function handleDelete(stud_id) {
         let temp = [];
         const std_length = students.length;
@@ -20,7 +22,7 @@ export function StudentCard(props) {
                 <p>Student Id: {student.stud_id}</p>
                 <div className="card-actions justify-end">
                     <button className="btn btn-error" onClick={function handler() { handleDelete(student.stud_id) }}>Delete</button>
-                    <button className="btn btn-warning">Update</button>
+                    <Link to={`/update/${student.stud_id}`} className="btn btn-warning">Update</Link>
                 </div>
             </div>
         </div>
