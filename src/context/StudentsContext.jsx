@@ -11,7 +11,7 @@ export default function StudentsProvider(props) {
             {props.children}
         </StudentsContext.Provider>
     );
-};
+}
 
 // export const useStudents = () => useContext(StudentsContext);
 // step 4
