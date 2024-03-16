@@ -18,8 +18,29 @@ export default function Update() {
                 stud_name, stud_age
             },
             onSubmit: function handler(values) {
-                alert("record updated successfully")
-                setStudents([...students, { stud_id, stud_name, stud_age }])
+                // const newStudents = students.map(
+                //     function (student) {
+                //         if (student.stud_id == stud_id) {
+                //             return { ...student, ...values }
+                //         }
+                //         return student
+                //     }
+                // );
+                // setStudents(newStudents);
+                // find the index of the student with the given stud_id
+                const index = students.findIndex(
+                    function (student) {
+                        return student.stud_id == stud_id;
+                    }
+                );
+                // update the student at the found index but not stud_id
+                students[index] = {
+                    stud_id:stud_id,
+                    stud_name: values.stud_name,
+                    stud_age: values.stud_age
+                };
+                // update the students state
+                setStudents(students);
                 navigate("/")
             }
         }

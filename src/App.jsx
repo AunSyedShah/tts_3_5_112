@@ -1,7 +1,6 @@
 import { AddStudent } from "./components/AddStudent";
 import StudentView from "./components/StudentView";
 import { useStudents } from "./context/StudentsContext";
-import StudentRegisteration from "./components/StudentRegisteration";
 
 export default function App() {
   const { students } = useStudents();
